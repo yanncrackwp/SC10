@@ -16,16 +16,16 @@ global.xteam = 'apivproject'
 global.lolhuman = 'yourkey'
 
 // Other
-global.owner = ['6281511480762']
-global.premium = ['6281511480762']
-global.ownername = 'YahyaGanzz'
-global.botname = 'AzzBot•MD'
-global.packname = '© YahyaGanzz'
-global.gc = 'https://github.com/AzzBott679'
-global.linkyt = 'https://youtube.com/channel/UCmUhiytK9WMYaOFgdOho_2g'
-global.linkgc = 'https://chat.whatsapp.com/CkguID8hSdSFAaBrKNHLSr'
+global.owner = ['6282252285143']
+global.premium = ['6282252285143']
+global.ownername = 'Ryann-'
+global.botname = 'Yann`Botz'
+global.packname = '© WhatsApp Bot'
+global.gc = 'https://github.com/RyanStore'
+global.linkyt = '-'
+global.linkgc = 'https://chat.whatsapp.com/I9sLszO6sbOGKgMDZyMAZz'
 global.limitawal = '10'
-global.author = '@yahyaganzz\n@AzzBot'
+global.author = '@Ryann\n@Ryann-Botz'
 global.sessionName = 'sessionya'
 global.prefa = ['','!','.','🐦','🐤','🗿']
 global.sp = '⌕'
@@ -48,7 +48,7 @@ global.sc = fs.readFileSync('./media/sc.jpg')
 global.tq = fs.readFileSync('./media/tq.jpg')
 global.menu = fs.readFileSync('./media/menu.jpg')
 global.allmenu = fs.readFileSync('./media/allmenu.jpg')
-global.thumb = { url: 'https://i.pinimg.com/736x/d0/f8/b8/d0f8b804a908ce4aaee63d54035d2192.jpg' }
+global.thumb = { url: 'https://telegra.ph/file/1ea8e058b844a001f9f42.jpg' }
 global.visoka = { url: 'https://telegra.ph/file/769d88bb8c8357546a149.mp4' }
 
 let file = require.resolve(__filename)

@@ -652,25 +652,25 @@ delete this.suit[id]
 }
 break
 	case 'donasi': case 'sewabot': case 'sewa': case 'buypremium': case 'donate': {
-zets.sendMessage(m.chat, { image: { url: 'https://i.postimg.cc/7ZWmBrMB/IMG-20220819-WA0027.jpg' }, caption: `*Hai Kak ${m.pushName}*\n\n Bot Rental Prices\n⌕ 15k Per Group via E-Walet 1 Month\n⌕ 20k via pulsa 1 Month\n\n Premium Price Bot\n⌕ 10k per User 1 bulan\n\nPayment can be via Paypal/link aja/pulsa\n\nFor more details, you can chat with the owner\nhttps://wa.me/6281252848955 (Owner)\n\nDonate For Me : \n\n⌕ Paypal : https://www.paypal.me/Rifando35\n⌕ Saweria : https://saweria.co/Nando35` }, { quoted: m })
+zets.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/60bd4fc373eba00665c1e.jpg' }, caption: `*Hai Kak ${m.pushName}*\n\n Bot Rental Prices\n⌕ 5k Per Group via E-Walet 1 Month\n⌕ 10k via pulsa 1 Month\n\n Premium Price Bot\n⌕ 10k per User 1 bulan\n\nPayment can be via Paypal/link aja/pulsa\n\nFor more details, you can chat with the owner\nhttps://wa.me/6282252285143 (Owner)\n\nDonate For Me : \n\n⌕ Paypal : https://paypal.me/RyanAdityaPrtm?country.x=ID&locale.x=id_ID\n⌕ Saweria : https://saweria.co/JbYannStore` }, { quoted: m })
 }
 break
 case 'sc':  case 'sourcecode': {
 addCountCmd(`#${command.slice(1)}`, sender, _cmd)
 	anu = `
-⌕ Script : https://github.com/AzzBott679
+⌕ Script : https://wa.me/6282252285143
 
-Jangan lupa kasih bintang.
-⌕ Donate : 081511480762 (Dana / gopay)
-⌕ Saweria : Kaga ada
-⌕ Paypal : kaga ada
+Chat Aja,Tapi yang Sopan Yak..Kalau Nge Chat P Ga Di Respon/Langsung To The Point Aja 😁
+⌕ Donate : 082252285143 Gopay
+⌕ Saweria : https://saweria.co/JbYannStore
+⌕ Paypal : https://paypal.me/RyanAdityaPrtm?country.x=ID&locale.x=id_ID
 
 Dont Forget Donate
 `
 	let btn = [{
 urlButton: {
 displayText: 'Instagram',
-url: 'https://instagram.com/naando.jpeg'
+url: 'https://instagram.com/yann_kullbet7'
 }
 }]
 zets.send5ButImg(m.chat, anu, botname, global.sc, btn)
@@ -680,15 +680,24 @@ break
 case 'tqto': case 'partner': case 'credits': {
 	anu = `Terima kasih
 
-Yahya Ganzz
-⌕ https://github.com/AzzBott679
-⌕ https://youtube.com/channel/UCmUhiytK9WMYaOFgdOho_2g
 
+┌──⭓ *THANKS TO*
+│
+│⭔ Allah Swt
+│⭔ Ortu Saya
+│⭔ Dika Ardnt 
+│⭔ GuaAbuzz
+│⭔ Fandy
+│⭔ Azzbot
+│⭔ Penyedia Module
+│⭔ Penyedia Rest Api
+│
+└───────⭓
 `
 	let btn = [{
 urlButton: {
 displayText: 'Instagram',
-url: 'https://instagram.com'
+url: 'https://instagram.com/yann_kullbet7'
 }
 }]
 zets.send5ButImg(m.chat, anu, botname, global.tq, btn)
@@ -915,7 +924,7 @@ if (!isAdmins) throw mess.admin
 	case 'add': {
 		if (!m.isGroup) throw mess.group
 if (!isBotAdmins) throw mess.botAdmin
-if (!isAdmins) throw mess.admin
+if (!isCreator) throw mess.owner
 		let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 		await zets.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
 	}
@@ -998,7 +1007,7 @@ teks += `⌕ @${mem.id.split('@')[0]}\n`
 zets.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
 }
 break
-case 'hidetag': {
+case 'hidetag': case 'h': {
 if (!m.isGroup) throw mess.group
 if (!isBotAdmins) throw mess.botAdmin
 if (!isAdmins) throw mess.admin
@@ -1180,7 +1189,7 @@ delete vote[m.chat]
 m.reply('Berhasil Menghapus Sesi Vote Di Grup Ini')
 	}
 break
-   case 'group': case 'grup': {
+   case 'group': case 'grup': case 'gc': {
 if (!m.isGroup) throw mess.group
 if (!isBotAdmins) throw mess.botAdmin
 if (!isAdmins) throw mess.admin
@@ -1276,7 +1285,7 @@ await zets.sendMessage(m.chat, { disappearingMessagesInChat: false }).then((res)
 }
 }
 break
-case 'delete': case 'del': {
+case 'delete': case 'del': case 'd': {
 if (!m.quoted) throw false
 let { chat, fromMe, id, isBaileys } = m.quoted
 if (!isBaileys) throw 'Pesan tersebut bukan dikirim oleh bot!'
@@ -1547,7 +1556,7 @@ m.reply(teks)
 })
 }
 break
-case 'gimage': {
+case 'gimage': case 'gimg': {
 if (!text) throw `Example : ${prefix + command} kaori cicak`
 let gis = require('g-i-s')
 gis(text, async (error, result) => {
@@ -1587,7 +1596,7 @@ var total = 0
 for (let o of _cmd) {
   total = total + o.count
 }
-var teks = `*ZETS BOT DASHBOARD*\n\n*HIT*\n• GLOBAL : ${total}\n• USER : ${totalUser}\n\n`
+var teks = `*YANN BOT DASHBOARD*\n\n*HIT*\n• GLOBAL : ${total}\n• USER : ${totalUser}\n\n`
 teks += `*Most Command Global*\n`
 for (let u = 0; u < jumlahCmd; u ++) {
   teks += `• ${_cmd[u].nama} : ${_cmd[u].count}\n`
@@ -1675,7 +1684,7 @@ if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(
 zets.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `⌕ Title : ${media.title}\n⌕ File Size : ${media.filesizeF}\n⌕ Url : ${urls[text - 1]}\n⌕ Ext : MP3\n⌕ Resolusi : ${args[1] || '360p'}` }, { quoted: m })
 }
 break
-case 'pinterest': {
+case 'pinterest': case 'pin': {
 if (!text) throw `Example : ${prefix + command}`
 m.reply(mess.wait)
 		let { pinterest } = require('./lib/scraper')
@@ -2669,10 +2678,10 @@ break
 
 case 'menu': case 'help': case '?': {
 addCountCmd(`#${command.slice(1)}`, sender, _cmd)
-buffer = `https://i.postimg.cc/PxTQPVrz/null-20220821-WA0032.jpg`
+buffer = `https://i.postimg.cc/m2B9drGr/null-20220825-WA0606.jpg`
 anu = `Hai kak ${pushname}, have a nice day:)
    
-♕︎ *INFO - BOT*
+❖ *INFO - BOT*
 ✔︎ *Bot Name:* _${global.botname}_
 ✔︎ *Owner Name:* _${global.ownername}_
 ✔︎ *Runtime:* _${runtime(process.uptime())}_
@@ -2681,231 +2690,231 @@ anu = `Hai kak ${pushname}, have a nice day:)
 ✔︎ *Waktu:* _${moment.tz('Asia/Jakarta').format('HH:mm:ss')}_ 
 ✔︎ *Library:* _Baileys-Md_
 
-♕︎ *Group*
-   ⚠︎ ${prefix}linkgroup
-   ⚠︎ ${prefix}ephemeral [option]
-   ⚠︎ ${prefix}setppgc [image]
-   ⚠︎ ${prefix}setname [text]
-   ⚠︎ ${prefix}setdesc [text]
-   ⚠︎ ${prefix}group [option]
-   ⚠︎ ${prefix}editinfo [option]
-   ⚠︎ ${prefix}add @user
-   ⚠︎ ${prefix}kick @user
-   ⚠︎ ${prefix}hidetag [text]
-   ⚠︎ ${prefix}tagall [text]
-   ⚠︎ ${prefix}antilink [on/off]
-   ⚠︎ ${prefix}mute [on/off]
-   ⚠︎ ${prefix}promote @user
-   ⚠︎ ${prefix}demote @user
-   ⚠︎ ${prefix}vote [text]
-   ⚠︎ ${prefix}devote
-   ⚠︎ ${prefix}upvote
-   ⚠︎ ${prefix}cekvote
-   ⚠︎ ${prefix}hapusvote
+❖ *Group*
+   ⏣ ${prefix}linkgroup
+   ⏣ ${prefix}ephemeral [option]
+   ⏣ ${prefix}setppgc [image]
+   ⏣ ${prefix}setname [text]
+   ⏣ ${prefix}setdesc [text]
+   ⏣ ${prefix}group [option]
+   ⏣ ${prefix}editinfo [option]
+   ⏣ ${prefix}add @user
+   ⏣ ${prefix}kick @user
+   ⏣ ${prefix}hidetag [text]
+   ⏣ ${prefix}tagall [text]
+   ⏣ ${prefix}antilink [on/off]
+   ⏣ ${prefix}mute [on/off]
+   ⏣ ${prefix}promote @user
+   ⏣ ${prefix}demote @user
+   ⏣ ${prefix}vote [text]
+   ⏣ ${prefix}devote
+   ⏣ ${prefix}upvote
+   ⏣ ${prefix}cekvote
+   ⏣ ${prefix}hapusvote
 
-♕︎ *Downloader*
-   ⚠︎ ${prefix}tiktoknowm [url]
-   ⚠︎ ${prefix}tiktokwm [url]
-   ⚠︎ ${prefix}tiktokmp3 [url]
-   ⚠︎ ${prefix}instagram [url]
-   ⚠︎ ${prefix}twitter [url]
-   ⚠︎ ${prefix}twittermp3 [url]
-   ⚠︎ ${prefix}facebook [url]
-   ⚠︎ ${prefix}pinterestdl [url]
-   ⚠︎ ${prefix}ytmp3 [url]
-   ⚠︎ ${prefix}ytmp4 [url]
-   ⚠︎ ${prefix}getmusic [query]
-   ⚠︎ ${prefix}getvideo [query]
-   ⚠︎ ${prefix}umma [url]
-   ⚠︎ ${prefix}joox [query]
-   ⚠︎ ${prefix}soundcloud [url]
+❖ *Downloader*
+   ⏣ ${prefix}tiktoknowm [url]
+   ⏣ ${prefix}tiktokwm [url]
+   ⏣ ${prefix}tiktokmp3 [url]
+   ⏣ ${prefix}instagram [url]
+   ⏣ ${prefix}twitter [url]
+   ⏣ ${prefix}twittermp3 [url]
+   ⏣ ${prefix}facebook [url]
+   ⏣ ${prefix}pinterestdl [url]
+   ⏣ ${prefix}ytmp3 [url]
+   ⏣ ${prefix}ytmp4 [url]
+   ⏣ ${prefix}getmusic [query]
+   ⏣ ${prefix}getvideo [query]
+   ⏣ ${prefix}umma [url]
+   ⏣ ${prefix}joox [query]
+   ⏣ ${prefix}soundcloud [url]
 
-♕︎ *Searching*
-   ⚠︎ ${prefix}play [query]
-   ⚠︎ ${prefix}yts [query]
-   ⚠︎ ${prefix}google [query]
-   ⚠︎ ${prefix}gimage [query]
-   ⚠︎ ${prefix}pinterest [query]
-   ⚠︎ ${prefix}wallpaper [query]
-   ⚠︎ ${prefix}wikimedia [query]
-   ⚠︎ ${prefix}ytsearch [query]
-   ⚠︎ ${prefix}ringtone [query]
-   ⚠︎ ${prefix}stalk [option] [query]
+❖ *Searching*
+   ⏣ ${prefix}play [query]
+   ⏣ ${prefix}yts [query]
+   ⏣ ${prefix}google [query]
+   ⏣ ${prefix}gimage [query]
+   ⏣ ${prefix}pinterest [query]
+   ⏣ ${prefix}wallpaper [query]
+   ⏣ ${prefix}wikimedia [query]
+   ⏣ ${prefix}ytsearch [query]
+   ⏣ ${prefix}ringtone [query]
+   ⏣ ${prefix}stalk [option] [query]
 
-♕︎ *Random*
-   ⚠︎ ${prefix}coffe
-   ⚠︎ ${prefix}quotesanime
-   ⚠︎ ${prefix}motivasi
-   ⚠︎ ${prefix}dilanquote
-   ⚠︎ ${prefix}bucinquote
-   ⚠︎ ${prefix}katasenja
-   ⚠︎ ${prefix}puisi
-   ⚠︎ ${prefix}couple
-   ⚠︎ ${prefix}anime
-   ⚠︎ ${prefix}waifu
-   ⚠︎ ${prefix}husbu
-   ⚠︎ ${prefix}neko
-   ⚠︎ ${prefix}shinobu
-   ⚠︎ ${prefix}waifus (nsfw)
-   ⚠︎ ${prefix}nekos (nsfw)
-   ⚠︎ ${prefix}trap (nsfw)
-   ⚠︎ ${prefix}blowjob (nsfw)
+❖ *Random*
+   ⏣ ${prefix}coffe
+   ⏣ ${prefix}quotesanime
+   ⏣ ${prefix}motivasi
+   ⏣ ${prefix}dilanquote
+   ⏣ ${prefix}bucinquote
+   ⏣ ${prefix}katasenja
+   ⏣ ${prefix}puisi
+   ⏣ ${prefix}couple
+   ⏣ ${prefix}anime
+   ⏣ ${prefix}waifu
+   ⏣ ${prefix}husbu
+   ⏣ ${prefix}neko
+   ⏣ ${prefix}shinobu
+   ⏣ ${prefix}waifus (nsfw)
+   ⏣ ${prefix}nekos (nsfw)
+   ⏣ ${prefix}trap (nsfw)
+   ⏣ ${prefix}blowjob (nsfw)
 
-♕︎ *Textpro*
-   ⚠︎ ${prefix}3dchristma
-   ⚠︎ ${prefix}3ddeepsea
-   ⚠︎ ${prefix}americanflag
-   ⚠︎ ${prefix}3dscifi
-   ⚠︎ ${prefix}3drainbow
-   ⚠︎ ${prefix}3dwaterpipe
-   ⚠︎ ${prefix}halloweenskeleton
-   ⚠︎ ${prefix}sketch
-   ⚠︎ ${prefix}bluecircuit
-   ⚠︎ ${prefix}space
-   ⚠︎ ${prefix}metallic
-   ⚠︎ ${prefix}fiction
-   ⚠︎ ${prefix}greenhorror
-   ⚠︎ ${prefix}transformer
-   ⚠︎ ${prefix}berry
-   ⚠︎ ${prefix}thunder
-   ⚠︎ ${prefix}magma
-   ⚠︎ ${prefix}3dcrackedstone
-   ⚠︎ ${prefix}3dneonlight
-   ⚠︎ ${prefix}impressiveglitch
-   ⚠︎ ${prefix}naturalleaves
-   ⚠︎ ${prefix}fireworksparkle
-   ⚠︎ ${prefix}matrix
-   ⚠︎ ${prefix}dropwater
-   ⚠︎ ${prefix}harrypotter
-   ⚠︎ ${prefix}foggywindow
-   ⚠︎ ${prefix}neondevils
-   ⚠︎ ${prefix}christmasholiday
-   ⚠︎ ${prefix}3dgradient
-   ⚠︎ ${prefix}blackpink
-   ⚠︎ ${prefix}gluetext
+❖ *Textpro*
+   ⏣ ${prefix}3dchristma
+   ⏣ ${prefix}3ddeepsea
+   ⏣ ${prefix}americanflag
+   ⏣ ${prefix}3dscifi
+   ⏣ ${prefix}3drainbow
+   ⏣ ${prefix}3dwaterpipe
+   ⏣ ${prefix}halloweenskeleton
+   ⏣ ${prefix}sketch
+   ⏣ ${prefix}bluecircuit
+   ⏣ ${prefix}space
+   ⏣ ${prefix}metallic
+   ⏣ ${prefix}fiction
+   ⏣ ${prefix}greenhorror
+   ⏣ ${prefix}transformer
+   ⏣ ${prefix}berry
+   ⏣ ${prefix}thunder
+   ⏣ ${prefix}magma
+   ⏣ ${prefix}3dcrackedstone
+   ⏣ ${prefix}3dneonlight
+   ⏣ ${prefix}impressiveglitch
+   ⏣ ${prefix}naturalleaves
+   ⏣ ${prefix}fireworksparkle
+   ⏣ ${prefix}matrix
+   ⏣ ${prefix}dropwater
+   ⏣ ${prefix}harrypotter
+   ⏣ ${prefix}foggywindow
+   ⏣ ${prefix}neondevils
+   ⏣ ${prefix}christmasholiday
+   ⏣ ${prefix}3dgradient
+   ⏣ ${prefix}blackpink
+   ⏣ ${prefix}gluetext
 
-♕︎ *Fun*
-   ⚠︎ ${prefix}halah
-   ⚠︎ ${prefix}hilih
-   ⚠︎ ${prefix}huluh
-   ⚠︎ ${prefix}heleh
-   ⚠︎ ${prefix}holoh
-   ⚠︎ ${prefix}jadian
-   ⚠︎ ${prefix}jodohku
-   ⚠︎ ${prefix}delttt
-   ⚠︎ ${prefix}tictactoe
-   ⚠︎ ${prefix}family100
-   ⚠︎ ${prefix}tebak [option]
-   ⚠︎ ${prefix}math [mode]
-   ⚠︎ ${prefix}suitpvp [@tag]
+❖ *Fun*
+   ⏣ ${prefix}halah
+   ⏣ ${prefix}hilih
+   ⏣ ${prefix}huluh
+   ⏣ ${prefix}heleh
+   ⏣ ${prefix}holoh
+   ⏣ ${prefix}jadian
+   ⏣ ${prefix}jodohku
+   ⏣ ${prefix}delttt
+   ⏣ ${prefix}tictactoe
+   ⏣ ${prefix}family100
+   ⏣ ${prefix}tebak [option]
+   ⏣ ${prefix}math [mode]
+   ⏣ ${prefix}suitpvp [@tag]
 
-♕︎ *Primbon*
-   ⚠︎ ${prefix}nomorhoki
-   ⚠︎ ${prefix}artimimpi
-   ⚠︎ ${prefix}artinama
-   ⚠︎ ${prefix}ramaljodoh
-   ⚠︎ ${prefix}ramaljodohbali
-   ⚠︎ ${prefix}suamiistri
-   ⚠︎ ${prefix}ramalcinta
-   ⚠︎ ${prefix}cocoknama
-   ⚠︎ ${prefix}pasangan
-   ⚠︎ ${prefix}jadiannikah
-   ⚠︎ ${prefix}sifatusaha
-   ⚠︎ ${prefix}rezeki
-   ⚠︎ ${prefix}pekerjaan
-   ⚠︎ ${prefix}nasib
-   ⚠︎ ${prefix}penyakit
-   ⚠︎ ${prefix}tarot
-   ⚠︎ ${prefix}fengshui
-   ⚠︎ ${prefix}haribaik
-   ⚠︎ ${prefix}harisangar
-   ⚠︎ ${prefix}harisial
-   ⚠︎ ${prefix}nagahari
-   ⚠︎ ${prefix}arahrezeki
-   ⚠︎ ${prefix}peruntungan
-   ⚠︎ ${prefix}weton
-   ⚠︎ ${prefix}karakter
-   ⚠︎ ${prefix}keberuntungan
-   ⚠︎ ${prefix}memancing
-   ⚠︎ ${prefix}masasubur
-   ⚠︎ ${prefix}zodiak
-   ⚠︎ ${prefix}shio
+❖ *Primbon*
+   ⏣ ${prefix}nomorhoki
+   ⏣ ${prefix}artimimpi
+   ⏣ ${prefix}artinama
+   ⏣ ${prefix}ramaljodoh
+   ⏣ ${prefix}ramaljodohbali
+   ⏣ ${prefix}suamiistri
+   ⏣ ${prefix}ramalcinta
+   ⏣ ${prefix}cocoknama
+   ⏣ ${prefix}pasangan
+   ⏣ ${prefix}jadiannikah
+   ⏣ ${prefix}sifatusaha
+   ⏣ ${prefix}rezeki
+   ⏣ ${prefix}pekerjaan
+   ⏣ ${prefix}nasib
+   ⏣ ${prefix}penyakit
+   ⏣ ${prefix}tarot
+   ⏣ ${prefix}fengshui
+   ⏣ ${prefix}haribaik
+   ⏣ ${prefix}harisangar
+   ⏣ ${prefix}harisial
+   ⏣ ${prefix}nagahari
+   ⏣ ${prefix}arahrezeki
+   ⏣ ${prefix}peruntungan
+   ⏣ ${prefix}weton
+   ⏣ ${prefix}karakter
+   ⏣ ${prefix}keberuntungan
+   ⏣ ${prefix}memancing
+   ⏣ ${prefix}masasubur
+   ⏣ ${prefix}zodiak
+   ⏣ ${prefix}shio
 
-♕︎ *Convert*
-   ⚠︎ ${prefix}toimage
-   ⚠︎ ${prefix}removebg
-   ⚠︎ ${prefix}sticker
-   ⚠︎ ${prefix}emojimix
-   ⚠︎ ${prefix}tovideo
-   ⚠︎ ${prefix}togif
-   ⚠︎ ${prefix}tourl
-   ⚠︎ ${prefix}tovn
-   ⚠︎ ${prefix}tomp3
-   ⚠︎ ${prefix}toaudio
-   ⚠︎ ${prefix}ebinary
-   ⚠︎ ${prefix}dbinary
-   ⚠︎ ${prefix}styletext
+❖ *Convert*
+   ⏣ ${prefix}toimage
+   ⏣ ${prefix}removebg
+   ⏣ ${prefix}sticker
+   ⏣ ${prefix}emojimix
+   ⏣ ${prefix}tovideo
+   ⏣ ${prefix}togif
+   ⏣ ${prefix}tourl
+   ⏣ ${prefix}tovn
+   ⏣ ${prefix}tomp3
+   ⏣ ${prefix}toaudio
+   ⏣ ${prefix}ebinary
+   ⏣ ${prefix}dbinary
+   ⏣ ${prefix}styletext
 
-♕︎ *Main*
-   ⚠︎ ${prefix}ping
-   ⚠︎ ${prefix}owner
-   ⚠︎ ${prefix}menu / ${prefix}help / ${prefix}?
-   ⚠︎ ${prefix}delete
-   ⚠︎ ${prefix}infochat
-   ⚠︎ ${prefix}quoted
-   ⚠︎ ${prefix}listpc
-   ⚠︎ ${prefix}listgc
-   ⚠︎ ${prefix}listonline
-   ⚠︎ ${prefix}speedtest
+❖ *Main*
+   ⏣ ${prefix}ping
+   ⏣ ${prefix}owner
+   ⏣ ${prefix}menu / ${prefix}help / ${prefix}?
+   ⏣ ${prefix}delete
+   ⏣ ${prefix}infochat
+   ⏣ ${prefix}quoted
+   ⏣ ${prefix}listpc
+   ⏣ ${prefix}listgc
+   ⏣ ${prefix}listonline
+   ⏣ ${prefix}speedtest
 
-♕︎ *Database*
-   ⚠︎ ${prefix}setcmd
-   ⚠︎ ${prefix}listcmd
-   ⚠︎ ${prefix}delcmd
-   ⚠︎ ${prefix}lockcmd
-   ⚠︎ ${prefix}addmsg
-   ⚠︎ ${prefix}listmsg
-   ⚠︎ ${prefix}getmsg
-   ⚠︎ ${prefix}delmsg
+❖ *Database*
+   ⏣ ${prefix}setcmd
+   ⏣ ${prefix}listcmd
+   ⏣ ${prefix}delcmd
+   ⏣ ${prefix}lockcmd
+   ⏣ ${prefix}addmsg
+   ⏣ ${prefix}listmsg
+   ⏣ ${prefix}getmsg
+   ⏣ ${prefix}delmsg
 
-♕︎ *Anonymous Chat*
-   ⚠︎ ${prefix}anonymous
-   ⚠︎ ${prefix}start
-   ⚠︎ ${prefix}next
-   ⚠︎ ${prefix}keluar
-   ⚠︎ ${prefix}sendkontak
+❖ *Anonymous Chat*
+   ⏣ ${prefix}anonymous
+   ⏣ ${prefix}start
+   ⏣ ${prefix}next
+   ⏣ ${prefix}keluar
+   ⏣ ${prefix}sendkontak
 
-♕︎ *Islam*
-   ⚠︎ ${prefix}iqra
-   ⚠︎ ${prefix}hadist
-   ⚠︎ ${prefix}alquran
-   ⚠︎ ${prefix}juzamma
-   ⚠︎ ${prefix}tafsirsurah
+❖ *Islam*
+   ⏣ ${prefix}iqra
+   ⏣ ${prefix}hadist
+   ⏣ ${prefix}alquran
+   ⏣ ${prefix}juzamma
+   ⏣ ${prefix}tafsirsurah
 
-♕︎ *Voice Changer*
-   ⚠︎ ${prefix}bass
-   ⚠︎ ${prefix}blown
-   ⚠︎ ${prefix}deep
-   ⚠︎ ${prefix}earrape
-   ⚠︎ ${prefix}fast
-   ⚠︎ ${prefix}fat
-   ⚠︎ ${prefix}nightcore
-   ⚠︎ ${prefix}reverse
-   ⚠︎ ${prefix}robot
-   ⚠︎ ${prefix}slow
-   ⚠︎ ${prefix}tupai
+❖ *Voice Changer*
+   ⏣ ${prefix}bass
+   ⏣ ${prefix}blown
+   ⏣ ${prefix}deep
+   ⏣ ${prefix}earrape
+   ⏣ ${prefix}fast
+   ⏣ ${prefix}fat
+   ⏣ ${prefix}nightcore
+   ⏣ ${prefix}reverse
+   ⏣ ${prefix}robot
+   ⏣ ${prefix}slow
+   ⏣ ${prefix}tupai
 
-♕︎ *Owner*
-   ⚠︎ ${prefix}react [emoji]
-   ⚠︎ ${prefix}chat [option]
-   ⚠︎ ${prefix}join [link]
-   ⚠︎ ${prefix}leave
-   ⚠︎ ${prefix}block @user
-   ⚠︎ ${prefix}unblock @user
-   ⚠︎ ${prefix}bcgroup [text]
-   ⚠︎ ${prefix}bcall [text]
-   ⚠︎ ${prefix}setppbot [image]
-   ⚠︎ ${prefix}setexif
+❖ *Owner*
+   ⏣ ${prefix}react [emoji]
+   ⏣ ${prefix}chat [option]
+   ⏣ ${prefix}join [link]
+   ⏣ ${prefix}leave
+   ⏣ ${prefix}block @user
+   ⏣ ${prefix}unblock @user
+   ⏣ ${prefix}bcgroup [text]
+   ⏣ ${prefix}bcall [text]
+   ⏣ ${prefix}setppbot [image]
+   ⏣ ${prefix}setexif
 `
 var button = [{ buttonId: `dashboard`, buttonText: { displayText: `Dashboard` }, type: 1 }, { buttonId: `owner`, buttonText: { displayText: `Owner` }, type: 1 }]
 zets.sendMessage(m.chat, { caption: `${anu}`, location: { jpegThumbnail: await reSize(buffer, 200, 200) }, buttons: button, footer:  botname, mentions: [m.sender] })
